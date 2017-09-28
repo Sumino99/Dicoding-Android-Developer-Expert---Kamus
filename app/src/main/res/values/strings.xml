@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">DicodingAndroidDeveloperExpert-Kamus</string>
+    <string name="image_view_splash_screen">image view splash screen</string>
+    <string name="image_view_icon_kamuskus">image view icon kamuskus</string>
+    <string name="kamus">Kamus</string>
+    <string name="kus">Kus</string>
 </resources>
