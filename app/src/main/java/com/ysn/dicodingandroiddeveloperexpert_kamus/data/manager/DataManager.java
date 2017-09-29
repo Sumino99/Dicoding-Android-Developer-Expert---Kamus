@@ -62,4 +62,20 @@ public class DataManager {
         return null;
     }
 
+    public int deleteDataKamusIndonesiaToEnglish() throws Exception {
+        return databaseHelper.deleteDataKamusIndonesiaToEnglish();
+    }
+
+    public int deleteDataKamusEnglishToIndonesia() throws Exception {
+        return databaseHelper.deleteDataKamusEnglishToIndonesia();
+    }
+
+    public int getSizeItemDataKamusEnglishToIndonesia() {
+        return databaseHelper.itemCountDataKamusEnglishToIndonesia();
+    }
+
+    public int getSizeItemDataKamusIndonesiaToEnglish() {
+        return databaseHelper.itemCountDataKamusIndonesiaToEnglish();
+    }
+
 }

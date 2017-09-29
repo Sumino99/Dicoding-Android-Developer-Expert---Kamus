@@ -4,4 +4,16 @@
     <string name="image_view_icon_kamuskus">image view icon kamuskus</string>
     <string name="kamus">Kamus</string>
     <string name="kus">Kus</string>
+    <string name="preparing_data">Preparing data . . .</string>
+    <string name="title_activity_dashboard">KamusKus</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="english_indonesia">English-Indonesia</string>
+    <string name="indonesia_english">Indonesia-English</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

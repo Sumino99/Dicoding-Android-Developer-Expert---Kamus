@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_item_english_indonesia_menu_nav_dashboard"
+        android:title="@string/english_indonesia"
+        android:orderInCategory="1"
+        />
+    <item
+        android:id="@+id/menu_item_indonesia_english_menu_nav_dashboard"
+        android:title="@string/indonesia_english"
+        android:orderInCategory="2"
+        />
+</menu>

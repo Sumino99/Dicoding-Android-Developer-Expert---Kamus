@@ -1,15 +1,14 @@
-package com.ysn.dicodingandroiddeveloperexpert_kamus;
+package com.ysn.dicodingandroiddeveloperexpert_kamus.di.component;
 
 import android.app.Application;
 import android.content.Context;
-import android.content.SharedPreferences;
 
+import com.ysn.dicodingandroiddeveloperexpert_kamus.App;
+import com.ysn.dicodingandroiddeveloperexpert_kamus.di.module.AppModule;
 import com.ysn.dicodingandroiddeveloperexpert_kamus.data.db.DatabaseHelper;
 import com.ysn.dicodingandroiddeveloperexpert_kamus.data.manager.DataManager;
 import com.ysn.dicodingandroiddeveloperexpert_kamus.data.sharedprefs.SharedPrefsSettings;
 import com.ysn.dicodingandroiddeveloperexpert_kamus.di.ApplicationContext;
-import com.ysn.dicodingandroiddeveloperexpert_kamus.ui.main.MainActivity;
-import com.ysn.dicodingandroiddeveloperexpert_kamus.ui.main.MainPresenter;
 
 import javax.inject.Singleton;
 

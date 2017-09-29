@@ -40,5 +40,4 @@ public class KataKamus {
                 ", toWord='" + toWord + '\'' +
                 '}';
     }
-
 }

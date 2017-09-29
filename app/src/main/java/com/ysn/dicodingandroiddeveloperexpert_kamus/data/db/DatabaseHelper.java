@@ -2,6 +2,8 @@ package com.ysn.dicodingandroiddeveloperexpert_kamus.data.db;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.res.Resources;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -121,5 +123,73 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             e.printStackTrace();
             throw e;
         }
+    }
+
+    /**
+     * Delete all data in table KAMUS INDONESIA TO ENGLISH
+     */
+    public int deleteDataKamusIndonesiaToEnglish() throws Exception {
+        try {
+            SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+            return sqLiteDatabase.delete(
+                    KAMUS_ENGLISH_TABLE_NAME,
+                    null,
+                    null
+            );
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw e;
+        }
+    }
+
+    /**
+     * Delete all data in table KAMUS ENGLISH TO INDONESIA
+     */
+    public int deleteDataKamusEnglishToIndonesia() throws Exception {
+        try {
+            SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+            return sqLiteDatabase.delete(
+                    KAMUS_INDONESIA_TABLE_NAME,
+                    null,
+                    null
+            );
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw e;
+        }
+    }
+
+    public int itemCountDataKamusEnglishToIndonesia() throws Resources.NotFoundException, NullPointerException {
+        int itemCount;
+        try {
+            SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+            Cursor cursor = sqLiteDatabase.rawQuery(
+                    "SELECT * FROM " + KAMUS_ENGLISH_TABLE_NAME,
+                    null,
+                    null
+            );
+            itemCount = cursor.getCount();
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw e;
+        }
+        return itemCount;
+    }
+
+    public int itemCountDataKamusIndonesiaToEnglish() throws Resources.NotFoundException, NullPointerException {
+        int itemCount;
+        try {
+            SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+            Cursor cursor = sqLiteDatabase.rawQuery(
+                    "SELECT * FROM " + KAMUS_INDONESIA_TABLE_NAME,
+                    null,
+                    null
+            );
+            itemCount = cursor.getCount();
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw e;
+        }
+        return itemCount;
     }
 }

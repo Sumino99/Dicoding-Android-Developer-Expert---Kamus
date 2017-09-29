@@ -6,8 +6,9 @@ import com.ysn.dicodingandroiddeveloperexpert_kamus.ui.base.MvpView;
  * Created by yudisetiawan on 9/28/17.
  */
 
-public interface MainView extends MvpView {
+interface MainView extends MvpView {
 
+    void loadData();
 
-
+    void loadDataFailed();
 }

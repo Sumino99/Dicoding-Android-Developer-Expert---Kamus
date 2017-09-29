@@ -1,9 +1,10 @@
-package com.ysn.dicodingandroiddeveloperexpert_kamus;
+package com.ysn.dicodingandroiddeveloperexpert_kamus.di.module;
 
 import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.ysn.dicodingandroiddeveloperexpert_kamus.App;
 import com.ysn.dicodingandroiddeveloperexpert_kamus.di.ApplicationContext;
 import com.ysn.dicodingandroiddeveloperexpert_kamus.di.DatabaseInfo;
 
@@ -17,9 +18,9 @@ import dagger.Provides;
 @Module
 public class AppModule {
 
-    private Application application;
+    private final Application application;
 
-    public AppModule(App application) {
+    public AppModule(Application application) {
         this.application = application;
     }
 

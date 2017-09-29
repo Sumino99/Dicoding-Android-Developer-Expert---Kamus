@@ -2,7 +2,10 @@ package com.ysn.dicodingandroiddeveloperexpert_kamus;
 
 import android.app.Application;
 import android.content.Context;
-import android.support.annotation.VisibleForTesting;
+
+import com.ysn.dicodingandroiddeveloperexpert_kamus.di.component.AppComponent;
+import com.ysn.dicodingandroiddeveloperexpert_kamus.di.component.DaggerAppComponent;
+import com.ysn.dicodingandroiddeveloperexpert_kamus.di.module.AppModule;
 
 /**
  * Created by yudisetiawan on 9/27/17.
@@ -26,12 +29,12 @@ public class App extends Application {
         component.inject(this);
     }
 
-    @VisibleForTesting
+    /*@VisibleForTesting
     protected AppComponent createComponent() {
         return DaggerAppComponent.builder()
                 .appModule(new AppModule(this))
                 .build();
-    }
+    }*/
 
     public AppComponent getAppComponent() {
         return component;

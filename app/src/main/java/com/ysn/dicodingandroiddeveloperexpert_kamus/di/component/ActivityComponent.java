@@ -1,8 +1,8 @@
 package com.ysn.dicodingandroiddeveloperexpert_kamus.di.component;
 
-import com.ysn.dicodingandroiddeveloperexpert_kamus.AppComponent;
 import com.ysn.dicodingandroiddeveloperexpert_kamus.di.PerActivity;
 import com.ysn.dicodingandroiddeveloperexpert_kamus.di.module.ActivityModule;
+import com.ysn.dicodingandroiddeveloperexpert_kamus.ui.dashboard.DashboardActivity;
 import com.ysn.dicodingandroiddeveloperexpert_kamus.ui.main.MainActivity;
 
 import dagger.Component;
@@ -16,5 +16,7 @@ import dagger.Component;
 public interface ActivityComponent {
 
     void inject(MainActivity mainActivity);
+
+    void inject(DashboardActivity dashboardActivity);
 
 }
