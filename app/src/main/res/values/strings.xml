@@ -16,4 +16,7 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="search_word_english">Search word english</string>
+    <string name="image_view_clear_edit_text_keyword">image view clear edit text keyword</string>
+    <string name="search_word_indonesia">Search word indonesia</string>
 </resources>
