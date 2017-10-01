@@ -45,7 +45,7 @@ public class MainPresenter implements MvpPresenter<MainView> {
         mainView = null;
     }
 
-    void doLoadData(final DataManager dataManager, Context context) {
+    void onLoadData(final DataManager dataManager, Context context) {
         String firstInstallConfig = dataManager.getFirstInstallConfig();
         Log.d(TAG, "firstInstallConfig: " + firstInstallConfig);
         if (firstInstallConfig != null) {

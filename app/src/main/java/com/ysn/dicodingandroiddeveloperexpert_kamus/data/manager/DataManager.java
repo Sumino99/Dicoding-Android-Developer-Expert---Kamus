@@ -7,6 +7,8 @@ import com.ysn.dicodingandroiddeveloperexpert_kamus.data.sharedprefs.SharedPrefs
 import com.ysn.dicodingandroiddeveloperexpert_kamus.di.ApplicationContext;
 import com.ysn.dicodingandroiddeveloperexpert_kamus.model.KataKamus;
 
+import java.util.List;
+
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
@@ -78,4 +80,11 @@ public class DataManager {
         return databaseHelper.itemCountDataKamusIndonesiaToEnglish();
     }
 
+    public List<KataKamus> searchKeywordEnglishIndonesia(String keyword) {
+        return databaseHelper.getDataEnglishIndonesiaByKeyword(keyword);
+    }
+
+    public List<KataKamus> searchKeywordIndonesiaEnglish(String keyword) {
+        return databaseHelper.getDataIndonesiaEnglishByKeyword(keyword);
+    }
 }

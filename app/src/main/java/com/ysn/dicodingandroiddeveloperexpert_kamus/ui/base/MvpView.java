@@ -6,8 +6,8 @@ package com.ysn.dicodingandroiddeveloperexpert_kamus.ui.base;
 
 public interface MvpView {
 
-    void onAttach();
+    void onAttachMvpView();
 
-    void onDetach();
+    void onDetachMvpView();
 
 }

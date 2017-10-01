@@ -1,10 +1,13 @@
 package com.ysn.dicodingandroiddeveloperexpert_kamus.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 /**
  * Created by yudisetiawan on 9/29/17.
  */
 
-public class KataKamus {
+public class KataKamus implements Parcelable {
 
     private String fromWord;
     private String toWord;
@@ -40,4 +43,32 @@ public class KataKamus {
                 ", toWord='" + toWord + '\'' +
                 '}';
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.fromWord);
+        dest.writeString(this.toWord);
+    }
+
+    protected KataKamus(Parcel in) {
+        this.fromWord = in.readString();
+        this.toWord = in.readString();
+    }
+
+    public static final Parcelable.Creator<KataKamus> CREATOR = new Parcelable.Creator<KataKamus>() {
+        @Override
+        public KataKamus createFromParcel(Parcel source) {
+            return new KataKamus(source);
+        }
+
+        @Override
+        public KataKamus[] newArray(int size) {
+            return new KataKamus[size];
+        }
+    };
 }

@@ -2,6 +2,7 @@ package com.ysn.dicodingandroiddeveloperexpert_kamus.di.module;
 
 import android.app.Activity;
 import android.content.Context;
+import android.support.v4.app.Fragment;
 
 import com.ysn.dicodingandroiddeveloperexpert_kamus.di.ActivityContext;
 
@@ -9,26 +10,26 @@ import dagger.Module;
 import dagger.Provides;
 
 /**
- * Created by yudisetiawan on 9/29/17.
+ * Created by yudisetiawan on 9/30/17.
  */
 
 @Module
-public class ActivityModule {
+public class FragmentModule {
 
-    private Activity activity;
+    private Fragment fragment;
 
-    public ActivityModule(Activity activity) {
-        this.activity = activity;
+    public FragmentModule(Fragment fragment) {
+        this.fragment = fragment;
     }
 
     /*@Provides
     @ActivityContext
     Context provideContext() {
-        return activity;
+        return fragment.getContext();
     }*/
 
     @Provides
-    Activity provideActivity() {
-        return activity;
+    Fragment provideFragment() {
+        return fragment;
     }
 }

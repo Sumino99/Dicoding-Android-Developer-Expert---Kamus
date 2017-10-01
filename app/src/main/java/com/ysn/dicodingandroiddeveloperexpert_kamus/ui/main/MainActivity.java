@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -54,35 +53,39 @@ public class MainActivity extends AppCompatActivity implements MainView {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         getActivityComponent().inject(this);
-        onAttach();
-        mainPresenter.doLoadData(dataManager, this);
+        onAttachMvpView();
+        doLoadData();
+    }
+
+    private void doLoadData() {
+        mainPresenter.onLoadData(dataManager, this);
     }
 
     @Override
     protected void onResume() {
-        onAttach();
+        onAttachMvpView();
         super.onResume();
     }
 
     @Override
     protected void onPause() {
-        onDetach();
+        onDetachMvpView();
         super.onPause();
     }
 
     @Override
     protected void onDestroy() {
-        onDetach();
+        onDetachMvpView();
         super.onDestroy();
     }
 
     @Override
-    public void onAttach() {
+    public void onAttachMvpView() {
         mainPresenter.onAttachView(this);
     }
 
     @Override
-    public void onDetach() {
+    public void onDetachMvpView() {
         mainPresenter.onDetachView();
     }
 

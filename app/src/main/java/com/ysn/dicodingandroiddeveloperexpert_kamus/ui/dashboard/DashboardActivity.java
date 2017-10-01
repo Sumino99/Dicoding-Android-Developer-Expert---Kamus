@@ -7,7 +7,6 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
 
 import com.ysn.dicodingandroiddeveloperexpert_kamus.App;
@@ -55,7 +54,7 @@ public class DashboardActivity extends AppCompatActivity
         setContentView(R.layout.activity_dashboard);
         ButterKnife.bind(this);
         getActivityComponent().inject(this);
-        onAttach();
+        onAttachMvpView();
         initToolbar();
         initNavigationDrawer();
         initContentLayout();
@@ -69,12 +68,12 @@ public class DashboardActivity extends AppCompatActivity
     }
 
     @Override
-    public void onAttach() {
+    public void onAttachMvpView() {
         dashboardPresenter.onAttachView(this);
     }
 
     @Override
-    public void onDetach() {
+    public void onDetachMvpView() {
         dashboardPresenter.onDetachView();
     }
 
