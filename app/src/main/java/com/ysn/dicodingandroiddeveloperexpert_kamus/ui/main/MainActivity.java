@@ -116,6 +116,7 @@ public class MainActivity extends AppCompatActivity implements MainView {
         textViewPreparingDataActivityMain.setVisibility(View.GONE);
         progressBarLoadingActivityMain.setVisibility(View.GONE);
         Intent intentDashboardActivity = new Intent(this, DashboardActivity.class);
+        intentDashboardActivity.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intentDashboardActivity);
     }
 }

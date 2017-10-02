@@ -54,14 +54,8 @@ public class DataManager {
         return databaseHelper.insertDataKamusEnglishToIndonesia(kataKamus);
     }
 
-    public KataKamus getDataKamusIndonesiaToEnglish(String keyword) throws Exception {
-        // TODO: 9/29/17 do something in here
-        return null;
-    }
-
-    public KataKamus getDataKamusEnglishToIndonesia(String keyword) throws Exception {
-        // TODO: 9/29/17 do something in here
-        return null;
+    public int insertDataKamusEnglishToIndonesia(List<KataKamus> listKataKamusEnglishIndonesia) throws Exception {
+        return databaseHelper.insertListDataKamusEnglishToIndonesia(listKataKamusEnglishIndonesia);
     }
 
     public int deleteDataKamusIndonesiaToEnglish() throws Exception {
@@ -86,5 +80,9 @@ public class DataManager {
 
     public List<KataKamus> searchKeywordIndonesiaEnglish(String keyword) {
         return databaseHelper.getDataIndonesiaEnglishByKeyword(keyword);
+    }
+
+    public int insertDatakamusIndonesiaToEnglish(List<KataKamus> listKataKamusIndonesiaEnglish) {
+        return databaseHelper.insertListDataKamusIndonesiaToEnglish(listKataKamusIndonesiaEnglish);
     }
 }

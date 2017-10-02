@@ -7,6 +7,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.database.sqlite.SQLiteStatement;
 
 import com.ysn.dicodingandroiddeveloperexpert_kamus.di.ApplicationContext;
 import com.ysn.dicodingandroiddeveloperexpert_kamus.di.DatabaseInfo;
@@ -272,5 +273,58 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             e.printStackTrace();
         }
         return listDataIndonesiaEnglish;
+    }
+
+    public int insertListDataKamusEnglishToIndonesia(List<KataKamus> listKataKamusEnglishIndonesia) throws Resources.NotFoundException {
+        try {
+            SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+            String queryInsert = "INSERT INTO " + KAMUS_ENGLISH_TABLE_NAME
+                    + " ("
+                    + KAMUS_ENGLISH_COLUMN_FROM_WORD + ", " + KAMUS_ENGLISH_COLUMN_TO_WORD
+                    + ") "
+                    + "VALUES "
+                    + "(?, ?)";
+            sqLiteDatabase.beginTransaction();
+            SQLiteStatement sqLiteStatement = sqLiteDatabase.compileStatement(queryInsert);
+            for (KataKamus kataKamusEnglishIndonesia : listKataKamusEnglishIndonesia) {
+                sqLiteStatement.bindString(1, kataKamusEnglishIndonesia.getFromWord());
+                sqLiteStatement.bindString(2, kataKamusEnglishIndonesia.getToWord());
+                sqLiteStatement.execute();
+                sqLiteStatement.clearBindings();
+            }
+            sqLiteDatabase.setTransactionSuccessful();
+            sqLiteDatabase.endTransaction();
+            return 1;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return -1;
+        }
+    }
+
+
+    public int insertListDataKamusIndonesiaToEnglish(List<KataKamus> listKataKamusIndonesiaEnglish) throws Resources.NotFoundException {
+        try {
+            SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+            String queryInsert = "INSERT INTO " + KAMUS_INDONESIA_TABLE_NAME
+                    + " ("
+                    + KAMUS_INDONESIA_COLUMN_FROM_WORD + ", " + KAMUS_INDONESIA_COLUMN_TO_WORD
+                    + ") "
+                    + "VALUES "
+                    + "(?, ?)";
+            sqLiteDatabase.beginTransaction();
+            SQLiteStatement sqLiteStatement = sqLiteDatabase.compileStatement(queryInsert);
+            for (KataKamus kataKamusIndonesiaEnglish : listKataKamusIndonesiaEnglish) {
+                sqLiteStatement.bindString(1, kataKamusIndonesiaEnglish.getFromWord());
+                sqLiteStatement.bindString(2, kataKamusIndonesiaEnglish.getToWord());
+                sqLiteStatement.execute();
+                sqLiteStatement.clearBindings();
+            }
+            sqLiteDatabase.setTransactionSuccessful();
+            sqLiteDatabase.endTransaction();
+            return 1;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return -1;
+        }
     }
 }

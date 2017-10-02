@@ -3,6 +3,8 @@ package com.ysn.dicodingandroiddeveloperexpert_kamus.ui.dashboard.fragments.engl
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -57,6 +59,7 @@ public class EnglishIndonesiaFragment extends Fragment implements EnglishIndones
     EditText editTextKeywordEnglishFragmentEnglishIndonesia;
     @BindView(R.id.recycler_view_result_data_keyword_fragment_english_indonesia)
     RecyclerView recyclerViewResultDataKeywordFragmentEnglishIndonesia;
+    private String inputKeyword;
 
     public FragmentComponent getFragmentComponent() {
         if (fragmentComponent == null) {
@@ -77,12 +80,14 @@ public class EnglishIndonesiaFragment extends Fragment implements EnglishIndones
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        Log.d(TAG, "onCreateView");
         View view = inflater.inflate(R.layout.fragment_english_indonesia, container, false);
         ButterKnife.bind(this, view);
         getFragmentComponent().inject(this);
         onAttachMvpView();
         initData();
         initListeners();
+
         return view;
     }
 
@@ -162,6 +167,8 @@ public class EnglishIndonesiaFragment extends Fragment implements EnglishIndones
 
                     @Override
                     public void onNext(@NonNull List<KataKamus> listDataKataKamusSearching) {
+                        inputKeyword = editTextKeywordEnglishFragmentEnglishIndonesia.getText().toString();
+                        Log.d(TAG, "inputKeyword onNext: " + inputKeyword);
                         Log.d(TAG, "listDataKatakamusSearching: " + Arrays.toString(listDataKataKamusSearching.toArray()));
                         listDataKataKamusEnglishIndonesia.clear();
                         listDataKataKamusEnglishIndonesia.addAll(listDataKataKamusSearching);
@@ -175,7 +182,6 @@ public class EnglishIndonesiaFragment extends Fragment implements EnglishIndones
 
                     @Override
                     public void onComplete() {
-                        /** nothing to do in here */
                     }
                 });
     }

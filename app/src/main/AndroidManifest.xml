@@ -20,7 +20,9 @@
         <activity
             android:name=".ui.dashboard.DashboardActivity"
             android:label="@string/title_activity_dashboard"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/AppTheme"
+            android:configChanges="orientation"
+            />
         <activity android:name=".ui.detail.DetailKamus"></activity>
     </application>
 

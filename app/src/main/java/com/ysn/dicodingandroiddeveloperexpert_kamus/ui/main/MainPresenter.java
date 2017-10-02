@@ -17,7 +17,6 @@ import javax.inject.Inject;
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
-import io.reactivex.functions.Action;
 import io.reactivex.functions.BiFunction;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
@@ -120,8 +119,22 @@ public class MainPresenter implements MvpPresenter<MainView> {
                                             @NonNull List<KataKamus> listKataKamusIndonesiaEnglish
                                     ) throws Exception {
                                         boolean isExecutedSuccess = true;
-                                        long insertExecuted;
-                                        for (KataKamus kataKamusEnglishIndonesia : listKataKamusEnglishIndonesia) {
+                                        int insertExecuted = dataManager.
+                                                insertDataKamusEnglishToIndonesia(
+                                                        listKataKamusEnglishIndonesia
+                                                );
+                                        isExecutedSuccess = insertExecuted != -1;
+                                        if (!isExecutedSuccess) {
+                                            return isExecutedSuccess;
+                                        }
+
+                                        insertExecuted = dataManager
+                                                .insertDatakamusIndonesiaToEnglish(
+                                                        listKataKamusIndonesiaEnglish
+                                                );
+                                        isExecutedSuccess = insertExecuted != -1;
+
+                                        /*for (KataKamus kataKamusEnglishIndonesia : listKataKamusEnglishIndonesia) {
                                             insertExecuted = dataManager
                                                     .insertDataKamusEnglishToIndonesia(
                                                             kataKamusEnglishIndonesia
@@ -141,7 +154,7 @@ public class MainPresenter implements MvpPresenter<MainView> {
                                             if (!isExecutedSuccess) {
                                                 return isExecutedSuccess;
                                             }
-                                        }
+                                        }*/
 
                                         return isExecutedSuccess;
                                     }
@@ -249,8 +262,21 @@ public class MainPresenter implements MvpPresenter<MainView> {
                                         @NonNull List<KataKamus> listKataKamusIndonesiaEnglish
                                 ) throws Exception {
                                     boolean isExecutedSuccess = true;
-                                    long insertExecuted;
-                                    for (KataKamus kataKamusEnglishIndonesia : listKataKamusEnglishIndonesia) {
+                                    int insertExecuted = dataManager.
+                                            insertDataKamusEnglishToIndonesia(
+                                                    listKataKamusEnglishIndonesia
+                                            );
+                                    isExecutedSuccess = insertExecuted != -1;
+                                    if (!isExecutedSuccess) {
+                                        return isExecutedSuccess;
+                                    }
+
+                                    insertExecuted = dataManager
+                                            .insertDatakamusIndonesiaToEnglish(
+                                                    listKataKamusIndonesiaEnglish
+                                            );
+                                    isExecutedSuccess = insertExecuted != -1;
+                                    /*for (KataKamus kataKamusEnglishIndonesia : listKataKamusEnglishIndonesia) {
                                         insertExecuted = dataManager
                                                 .insertDataKamusEnglishToIndonesia(
                                                         kataKamusEnglishIndonesia
@@ -272,7 +298,7 @@ public class MainPresenter implements MvpPresenter<MainView> {
                                             return isExecutedSuccess;
                                         }
                                         Log.d(TAG, "kataKamusIndonesiaEnglish: " + kataKamusIndonesiaEnglish);
-                                    }
+                                    }*/
 
                                     return isExecutedSuccess;
                                 }
@@ -306,6 +332,7 @@ public class MainPresenter implements MvpPresenter<MainView> {
 
     /**
      * Debug mode
+     *
      * @param dataManager
      */
     void onGetItemDataKamus(DataManager dataManager) {
