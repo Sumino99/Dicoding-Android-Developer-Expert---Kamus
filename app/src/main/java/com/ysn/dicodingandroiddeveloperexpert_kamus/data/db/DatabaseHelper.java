@@ -1,3 +1,10 @@
+/*
+ * Created by Yudi Setiawan on 1/23/18 11:01 PM
+ * Copyright (c) 2018. All rights reserved.
+ *
+ * Last modified 1/23/18 11:00 PM
+ */
+
 package com.ysn.dicodingandroiddeveloperexpert_kamus.data.db;
 
 import android.content.ContentValues;
@@ -14,8 +21,6 @@ import com.ysn.dicodingandroiddeveloperexpert_kamus.di.DatabaseInfo;
 import com.ysn.dicodingandroiddeveloperexpert_kamus.model.KataKamus;
 
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Iterator;
 import java.util.List;
 
 import javax.inject.Inject;

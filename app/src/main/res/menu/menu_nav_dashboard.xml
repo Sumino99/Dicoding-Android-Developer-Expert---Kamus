@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Created by Yudi Setiawan on 1/23/18 11:01 PM
+  ~ Copyright (c) 2018. All rights reserved.
+  ~
+  ~ Last modified 1/23/18 11:00 PM
+  -->
+
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/menu_item_english_indonesia_menu_nav_dashboard"
